@@ -1,6 +1,9 @@
 import { Router } from 'express'
+import poi from './poi'
 
 const router = new Router()
+
+router.use('/poi', poi)
 
 /**
  * @apiDefine master Master access only
