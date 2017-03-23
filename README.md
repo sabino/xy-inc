@@ -33,9 +33,9 @@ $ npm run dev
 Express server listening on http://0.0.0.0:9000, in development mode
 ```
 
-Now you can use the `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9` token (it's usually greater than this) to call user protected APIs. For example, you can create a new `article` API using `yo rest:api` and make the `POST /articles` endpoint only accessible to authenticated users. Then, to create a new article you must pass the `access_token` parameter.
+To create a new POI.
 ```bash
-curl -X POST http://0.0.0.0:9000/articles -i -d "title=Awesome Article&content=Yeah Baby&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+curl -X POST http://0.0.0.0:9000/poi -i -d "name=Lanchonete&x=10&y=20"
 ```
 
 It will return something like:
