@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { middleware as query } from 'querymen'
 import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy } from './controller'
+import { create, index, filter, show, update, destroy } from './controller'
 import { schema } from './model'
 export Poi, { schema } from './model'
 
@@ -34,6 +34,17 @@ router.post('/',
 router.get('/',
   query(),
   index)
+
+/**
+ * @api {get} /filter?dmax=&x=&y= Retrieve Points Of Interest based on max distance
+ * @apiName RetrieveWithMaxDistance
+ * @apiGroup Poi
+ * @apiParam x Poi's x.
+ * @apiParam y Poi's y.
+ * @apiSuccess {Object[]} pois List of pois.
+ */
+router.get('/filter',
+  filter)
 
 /**
  * @api {get} /poi/:id Retrieve poi

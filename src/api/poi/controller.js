@@ -14,6 +14,39 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
     .then(success(res))
     .catch(next)
 
+// Since I was not able to update the free MongoDB version hosted by heroku I had to use aggregate instead of addFields
+export const filter = (req, res, next) =>
+  Poi.aggregate({
+    $project : {
+     dmax: { $literal: parseFloat(req.query.dmax) || 0 },
+     distance: {
+           $sqrt: {
+               $add: [
+                  { $pow: [ { $subtract: [ "$y", parseFloat(req.query.y) || 0 ] }, 2 ] },
+                  { $pow: [ { $subtract: [ "$x", parseFloat(req.query.x) || 0 ] }, 2 ] }
+               ]
+           }
+        },
+     name: "$name",
+     x: "$x",
+     y: "$y",
+     createdAt: "$createdAt",
+     updatedAt: "$updatedAt",
+    }
+  }).then(function(pois) {
+    var filtered = []
+    for (var i = pois.length - 1; i >= 0; i--) {
+      if (pois[i].distance <= pois[i].dmax)
+        filtered.push(pois[i])
+
+      delete pois[i].distance;
+      delete pois[i].dmax;
+    }
+    return filtered
+  })
+    .then(success(res))
+    .catch(next)
+
 export const show = ({ params }, res, next) =>
   Poi.findById(params.id)
     .then(notFound(res))

@@ -27,10 +27,8 @@ poiSchema.methods.view = function (full) {
 
     return full ? {
       ...view
-      // add properties for a full view
     } : view
   }
-
 
 const model = mongoose.model('Poi', poiSchema)
 

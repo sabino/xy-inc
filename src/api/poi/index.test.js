@@ -72,3 +72,10 @@ test('DELETE /poi/:id 404', async () => {
     .delete('/123456789098765432123456')
   expect(status).toBe(404)
 })
+
+test('GET /poi/filter 200', async () => {
+  const { status, body } = await request(app())
+    .get('/filter')
+  expect(status).toBe(200)
+  expect(Array.isArray(body)).toBe(true)
+})
