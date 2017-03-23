@@ -2,18 +2,19 @@
 
 A
 
-- [Poi](#poi)
-	- [Create poi](#create-poi)
+- [POI](#poi)
+	- [Create POI](#create-poi)
 	- [Delete poi](#delete-poi)
-	- [Retrieve poi](#retrieve-poi)
-	- [Retrieve pois](#retrieve-pois)
-	- [Update poi](#update-poi)
+	- [Retrieve POIs](#retrieve-pois)
+	- [Retrieve POIs](#retrieve-pois)
+	- [Retrieve based on Max Distance](#retrieve-based-on-max-distance)
+	- [Update POI](#update-poi)
 	
 
 
-# Poi
+# POI
 
-## Create poi
+## Create POI
 
 
 
@@ -24,9 +25,9 @@ A
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| name			| 			|  <p>Poi's name.</p>							|
-| x			| 			|  <p>Poi's x.</p>							|
-| y			| 			|  <p>Poi's y.</p>							|
+| name			| 			|  <p>POI's name.</p>							|
+| x			| 			|  <p>POI's x position.</p>							|
+| y			| 			|  <p>POI's y position.</p>							|
 
 ## Delete poi
 
@@ -35,14 +36,14 @@ A
 	DELETE /poi/:id
 
 
-## Retrieve poi
+## Retrieve POIs
 
 
 
 	GET /poi/:id
 
 
-## Retrieve pois
+## Retrieve POIs
 
 
 
@@ -59,7 +60,21 @@ A
 | sort			| String[]			| **optional** <p>Order of returned items.</p>							|
 | fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
 
-## Update poi
+## Retrieve based on Max Distance
+
+
+
+	GET /filter?dmax=&amp;x=&amp;y=
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| dmax			| 			|  <p>POI's Max Distance.</p>							|
+| y			| 			|  <p>POI's x position.</p>							|
+
+## Update POI
 
 
 
@@ -70,8 +85,8 @@ A
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| name			| 			|  <p>Poi's name.</p>							|
-| x			| 			|  <p>Poi's x.</p>							|
-| y			| 			|  <p>Poi's y.</p>							|
+| name			| 			|  <p>POI's name.</p>							|
+| x			| 			|  <p>POI's x position.</p>							|
+| y			| 			|  <p>POI's y position.</p>							|
 
 

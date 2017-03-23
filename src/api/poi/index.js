@@ -9,12 +9,12 @@ const router = new Router()
 const { name, x, y } = schema.tree
 
 /**
- * @api {post} /poi Create poi
+ * @api {post} /poi Create POI
  * @apiName CreatePoi
- * @apiGroup Poi
- * @apiParam name Poi's name.
- * @apiParam x Poi's x.
- * @apiParam y Poi's y.
+ * @apiGroup POI
+ * @apiParam name POI's name.
+ * @apiParam x POI's x position.
+ * @apiParam y POI's y position.
  * @apiSuccess {Object} poi Poi's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Poi not found.
@@ -24,9 +24,9 @@ router.post('/',
   create)
 
 /**
- * @api {get} /poi Retrieve pois
+ * @api {get} /poi Retrieve POIs
  * @apiName RetrievePois
- * @apiGroup Poi
+ * @apiGroup POI
  * @apiUse listParams
  * @apiSuccess {Object[]} pois List of pois.
  * @apiError {Object} 400 Some parameters may contain invalid values.
@@ -36,20 +36,21 @@ router.get('/',
   index)
 
 /**
- * @api {get} /filter?dmax=&x=&y= Retrieve Points Of Interest based on max distance
+ * @api {get} /filter?dmax=&x=&y= Retrieve based on Max Distance
  * @apiName RetrieveWithMaxDistance
- * @apiGroup Poi
- * @apiParam x Poi's x.
- * @apiParam y Poi's y.
+ * @apiGroup POI
+ * @apiParam dmax POI's Max Distance.
+ * @apiParam y POI's x position.
+ * @apiParam y POI's y position.
  * @apiSuccess {Object[]} pois List of pois.
  */
 router.get('/filter',
   filter)
 
 /**
- * @api {get} /poi/:id Retrieve poi
+ * @api {get} /poi/:id Retrieve POIs
  * @apiName RetrievePoi
- * @apiGroup Poi
+ * @apiGroup POI
  * @apiSuccess {Object} poi Poi's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Poi not found.
@@ -58,15 +59,15 @@ router.get('/:id',
   show)
 
 /**
- * @api {put} /poi/:id Update poi
+ * @api {put} /poi/:id Update POI
  * @apiName UpdatePoi
- * @apiGroup Poi
- * @apiParam name Poi's name.
- * @apiParam x Poi's x.
- * @apiParam y Poi's y.
- * @apiSuccess {Object} poi Poi's data.
+ * @apiGroup POI
+ * @apiParam name POI's name.
+ * @apiParam x POI's x position.
+ * @apiParam y POI's y position.
+ * @apiSuccess {Object} poi POI's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 404 Poi not found.
+ * @apiError 404 POI not found.
  */
 router.put('/:id',
   body({ name, x, y }),
@@ -75,9 +76,9 @@ router.put('/:id',
 /**
  * @api {delete} /poi/:id Delete poi
  * @apiName DeletePoi
- * @apiGroup Poi
+ * @apiGroup POI
  * @apiSuccess (Success 204) 204 No Content.
- * @apiError 404 Poi not found.
+ * @apiError 404 POI not found.
  */
 router.delete('/:id',
   destroy)

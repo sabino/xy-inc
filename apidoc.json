@@ -3,5 +3,5 @@
   "version": "1.0.0",
   "description": "A",
   "title": "A RESTful API for managing Points-of-Interest for XY Inc.",
-  "url" : "https://xy-service.herokuapp.com/"
+  "url" : "https://xy-service.herokuapp.com"
 }
