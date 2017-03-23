@@ -36,11 +36,11 @@ router.get('/',
   index)
 
 /**
- * @api {get} /filter?dmax=&x=&y= Retrieve based on Max Distance
+ * @api {get} /filter?dmax=&#38;x=&#38;y= Retrieve based on Max Distance
  * @apiName RetrieveWithMaxDistance
  * @apiGroup POI
  * @apiParam dmax POI's Max Distance.
- * @apiParam y POI's x position.
+ * @apiParam x POI's x position.
  * @apiParam y POI's y position.
  * @apiSuccess {Object[]} pois List of pois.
  */
@@ -48,7 +48,7 @@ router.get('/filter',
   filter)
 
 /**
- * @api {get} /poi/:id Retrieve POIs
+ * @api {get} /poi/:id Retrieve POI
  * @apiName RetrievePoi
  * @apiGroup POI
  * @apiSuccess {Object} poi Poi's data.
@@ -74,7 +74,7 @@ router.put('/:id',
   update)
 
 /**
- * @api {delete} /poi/:id Delete poi
+ * @api {delete} /poi/:id Delete POI
  * @apiName DeletePoi
  * @apiGroup POI
  * @apiSuccess (Success 204) 204 No Content.

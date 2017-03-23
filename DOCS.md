@@ -4,8 +4,8 @@ A
 
 - [POI](#poi)
 	- [Create POI](#create-poi)
-	- [Delete poi](#delete-poi)
-	- [Retrieve POIs](#retrieve-pois)
+	- [Delete POI](#delete-poi)
+	- [Retrieve POI](#retrieve-poi)
 	- [Retrieve POIs](#retrieve-pois)
 	- [Retrieve based on Max Distance](#retrieve-based-on-max-distance)
 	- [Update POI](#update-poi)
@@ -29,14 +29,14 @@ A
 | x			| 			|  <p>POI's x position.</p>							|
 | y			| 			|  <p>POI's y position.</p>							|
 
-## Delete poi
+## Delete POI
 
 
 
 	DELETE /poi/:id
 
 
-## Retrieve POIs
+## Retrieve POI
 
 
 
@@ -64,7 +64,7 @@ A
 
 
 
-	GET /filter?dmax=&amp;x=&amp;y=
+	GET /filter?dmax=&#38;x=&#38;y=
 
 
 ### Parameters
@@ -72,7 +72,8 @@ A
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | dmax			| 			|  <p>POI's Max Distance.</p>							|
-| y			| 			|  <p>POI's x position.</p>							|
+| x			| 			|  <p>POI's x position.</p>							|
+| y			| 			|  <p>POI's y position.</p>							|
 
 ## Update POI
 
