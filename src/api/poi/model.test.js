@@ -3,7 +3,7 @@ import { Poi } from '.'
 let poi
 
 beforeEach(async () => {
-  poi = await Poi.create({ name: 'test', x: 'test', y: 'test' })
+  poi = await Poi.create({ name: 'test', x: 1, y: 1 })
 })
 
 describe('view', () => {

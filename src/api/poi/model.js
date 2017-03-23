@@ -5,17 +5,16 @@ const poiSchema = new Schema({
     type: String
   },
   x: {
-    type: String
+    type: Number
   },
   y: {
-    type: String
+    type: Number
   }
 }, {
   timestamps: true
 })
 
-poiSchema.methods = {
-  view (full) {
+poiSchema.methods.view = function (full) {
     const view = {
       // simple view
       id: this.id,
@@ -31,7 +30,7 @@ poiSchema.methods = {
       // add properties for a full view
     } : view
   }
-}
+
 
 const model = mongoose.model('Poi', poiSchema)
 

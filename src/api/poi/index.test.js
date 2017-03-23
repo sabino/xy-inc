@@ -13,12 +13,12 @@ beforeEach(async () => {
 test('POST /poi 201', async () => {
   const { status, body } = await request(app())
     .post('/')
-    .send({ name: 'test', x: 'test', y: 'test' })
+    .send({ name: 'test', x: 1, y: 1 })
   expect(status).toBe(201)
   expect(typeof body).toEqual('object')
   expect(body.name).toEqual('test')
-  expect(body.x).toEqual('test')
-  expect(body.y).toEqual('test')
+  expect(body.x).toEqual(1)
+  expect(body.y).toEqual(1)
 })
 
 test('GET /poi 200', async () => {
@@ -45,19 +45,19 @@ test('GET /poi/:id 404', async () => {
 test('PUT /poi/:id 200', async () => {
   const { status, body } = await request(app())
     .put(`/${poi.id}`)
-    .send({ name: 'test', x: 'test', y: 'test' })
+    .send({ name: 'test', x: 1, y: 1 })
   expect(status).toBe(200)
   expect(typeof body).toEqual('object')
   expect(body.id).toEqual(poi.id)
   expect(body.name).toEqual('test')
-  expect(body.x).toEqual('test')
-  expect(body.y).toEqual('test')
+  expect(body.x).toEqual(1)
+  expect(body.y).toEqual(1)
 })
 
 test('PUT /poi/:id 404', async () => {
   const { status } = await request(app())
     .put('/123456789098765432123456')
-    .send({ name: 'test', x: 'test', y: 'test' })
+    .send({ name: 'test', x: 1, y: 1 })
   expect(status).toBe(404)
 })
 
