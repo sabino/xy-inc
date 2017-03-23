@@ -1,17 +1,23 @@
 import mongoose, { Schema } from 'mongoose'
 
+const validator = [
+    { validator: Number.isInteger, message: '{VALUE} is not an integer value' }
+];
+
 const poiSchema = new Schema({
-  name: {
-    type: String
-  },
-  x: {
-    type: Number
-  },
-  y: {
-    type: Number
-  }
+    name: {
+        type: String
+    },
+    x: {
+        type: Number,
+        validate: validator
+    },
+    y: {
+        type: Number,
+        validate: validator
+    }
 }, {
-  timestamps: true
+    timestamps: true
 })
 
 poiSchema.methods.view = function (full) {

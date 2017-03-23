@@ -34,8 +34,8 @@ export const filter = (req, res, next) =>
      updatedAt: "$updatedAt",
     }
   }).then(function(pois) {
-    var filtered = []
-    for (var i = pois.length - 1; i >= 0; i--) {
+    let filtered = []
+    for (let i = pois.length - 1; i >= 0; i--) {
       if (pois[i].distance <= pois[i].dmax)
         filtered.push(pois[i])
 
