@@ -43,12 +43,11 @@ It will return something like:
 HTTP/1.1 201 Created
 ...
 {
-  "id": "57d819bfabfa186c7887a8d6",
-  "title": "Awesome Article",
-  "content": "Yeah Baby",
+  "id": "47d21fbfbgfa1a6c2347a5d9",
+  "name": "Lanchonete",
+  "x": 10,
+  "y": 20,
   "createdAt": "2016-09-13T15:22:39.846Z",
   "updatedAt":"2016-09-13T15:22:39.846Z"
 }
 ```
-
-> Some endpoints are only accessible by admin users. To create an admin user, just pass the `role=admin` along to other data when calling `POST /users`.
