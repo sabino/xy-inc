@@ -11,9 +11,13 @@ addons:
     - gcc-4.8
     - g++-4.8
 script:
-  - npm test -- -i --coverage
+- npm test -- -i --coverage
 env:
   global:
   - CXX=g++-4.8
   - MASTER_KEY=masterKey
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: wbMo6IxgTlp86nlhi5FDuiQqa4KFXs5110eVcQk9f3eUrCHfjTViorr+uV8yeav+4yOvHqs6Qa0quSRlh+oPXOJZVNnvAcZTDraZS5f84lVYcrUWYXatwW8pnWidRqKzm2G2CV9ObtGc7Ef6thNngHiLPpDNaqDKZih/mDFX/mhBElvPbwRkGdywNjx+g4xI2LM5ysiTRTq2yw3x58inEO90gsxKFcLtd7MDRctR/E1YXVrPMxYLeYkNUNeVyverKNNHCJrU1XoyBpJoMzuhkSK5nqdWBsCw3RbOy+tJTi0Q/zjw5XqU2/EHl4Bolre5OjOQN7PL0ulBFlu4zw4UVM3v15cXXH/ZEjyzIjpclERULGDPugMsWKBw1pGyvqRwfbvqwCrPEgyd/qUai7HoOmCoorN5+yLHE420dTGumW5QcTJPf+VetngqRH/wEkdw8JU6fzNVa96AebGWscSAImXjdms1nym9+60e4fpFpIz0LuhwPrMzWyM/jm/mAD/ieGj2fBd8QJAgmbyn/8lUWUQ7fSRjT2f/AyNgdnAc9aANqfqxIWLSSR+bcpziLizTe0mMRmh34stYua/zF10E0mFjoEziWlF+Quc+jAEYC35hvGpC1f8+uVEZpj0fD6bCMe2Kd6Tr59DcqLtQYRAaibmv0FJm4tNekJcI0EySggU=
+  app: xy-service
