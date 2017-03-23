@@ -36,7 +36,7 @@ router.get('/',
   index)
 
 /**
- * @api {get} /filter?dmax=&#38;x=&#38;y= Retrieve based on Max Distance
+ * @api {get} /filter?dmax=0&x=0&y=0 Retrieve based on Max Distance
  * @apiName RetrieveWithMaxDistance
  * @apiGroup POI
  * @apiParam dmax POI's Max Distance.
@@ -82,5 +82,6 @@ router.put('/:id',
  */
 router.delete('/:id',
   destroy)
+
 
 export default router
